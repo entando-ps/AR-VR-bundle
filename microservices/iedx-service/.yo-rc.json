@@ -1,0 +1,56 @@
+{
+  "generator-jhipster": {
+    "blueprints": [
+      {
+        "name": "generator-jhipster-entando",
+        "version": "7.0.1"
+      }
+    ],
+    "otherModules": [
+      {
+        "name": "generator-jhipster-entando",
+        "version": "7.0.1"
+      }
+    ],
+    "applicationType": "microservice",
+    "baseName": "iedx",
+    "jhipsterVersion": "7.2.0",
+    "skipClient": true,
+    "withAdminUi": false,
+    "skipUserManagement": true,
+    "skipServer": false,
+    "skipCheckLengthOfIdentifier": false,
+    "skipFakeData": false,
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "testFrameworks": [],
+    "pages": [],
+    "creationTimestamp": 1669904667603,
+    "serviceDiscoveryType": false,
+    "reactive": false,
+    "authenticationType": "oauth2",
+    "packageName": "it.iedx.login",
+    "serverPort": "8081",
+    "cacheProvider": "caffeine",
+    "enableHibernateCache": true,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "buildTool": "maven",
+    "serverSideOptions": [],
+    "websocket": false,
+    "searchEngine": false,
+    "messageBroker": false,
+    "enableSwaggerCodegen": false,
+    "microserviceDependencies": "entando",
+    "generateMicroFrontends": "never",
+    "enableTranslation": false,
+    "nativeLanguage": "it",
+    "monorepository": true,
+    "skipCommitHook": true,
+    "jwtSecretKey": "NTliNTU4ZmMzOThiNjI0YjQ2MzFjOWVlYmIxMzI2NTY4OGZmMzkwM2VlODkyM2ZlYWJmNzE2YmRhNDMxNjRiZDQ4NDhjM2E4MDJjOGYxZTIyNmI2OGEyYWFiNTYyYzMyOTliYmIyNDMxNmU3YzhkZjdmNDNkYWYyZTRkNWYxNjE=",
+    "enableGradleEnterprise": false,
+    "languages": ["en", "fr"]
+  }
+}
