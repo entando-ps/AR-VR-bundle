@@ -17,7 +17,14 @@
             "titles": {
                 "en": "iedx-app",
                 "it": "iedx-app"
-            }
+            },
+            "apiClaims": [
+                {
+                    "name": "iedx-api",
+                    "type": "internal",
+                    "serviceName": "iedx-service"
+                }
+            ]
         }
     ],
     "svc": [
