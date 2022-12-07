@@ -3,7 +3,7 @@
         {
             "name": "iedx-service",
             "stack": "spring-boot",
-            "healthCheckPath": "/api/health"
+            "healthCheckPath": "/management/health"
         }
     ],
     "microfrontends": [
