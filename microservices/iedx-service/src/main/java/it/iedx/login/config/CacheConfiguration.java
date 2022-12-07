@@ -1,8 +1,6 @@
 package it.iedx.login.config;
 
 import com.github.benmanes.caffeine.jcache.configuration.CaffeineConfiguration;
-import java.util.OptionalLong;
-import java.util.concurrent.TimeUnit;
 import org.hibernate.cache.jcache.ConfigSettings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer;
@@ -11,9 +9,13 @@ import org.springframework.boot.info.BuildProperties;
 import org.springframework.boot.info.GitProperties;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import tech.jhipster.config.JHipsterProperties;
 import tech.jhipster.config.cache.PrefixedKeyGenerator;
+
+import java.util.OptionalLong;
+import java.util.concurrent.TimeUnit;
 
 @Configuration
 @EnableCaching
@@ -42,7 +44,7 @@ public class CacheConfiguration {
     public JCacheManagerCustomizer cacheManagerCustomizer() {
         return cm -> {
             createCache(cm, "oAuth2Authentication");
-            createCache(cm, it.iedx.login.domain.Conference.class.getName());
+            createCache(cm, it.iedx.login.domain.Experience.class.getName());
             // jhipster-needle-caffeine-add-entry
         };
     }

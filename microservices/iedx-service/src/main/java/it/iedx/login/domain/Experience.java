@@ -2,6 +2,8 @@ package it.iedx.login.domain;
 
 import it.iedx.login.service.dto.Asset;
 import org.apache.commons.lang3.StringUtils;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.Column;
@@ -18,6 +20,7 @@ import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "experience")
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Experience {
 
     private static final String SRC_KEY = "src";

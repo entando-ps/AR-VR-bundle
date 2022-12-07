@@ -3,7 +3,11 @@
         {
             "name": "iedx-service",
             "stack": "spring-boot",
-            "healthCheckPath": "/management/health"
+            "healthCheckPath": "/management/health",
+						"dbms":"mysql",
+						"ingressPath" : "/vr",
+						"deploymentBaseName" : "ar-vr",
+            "roles" : ["ar-vr-admin", "ar-vr-view"]
         }
     ],
     "microfrontends": [
@@ -32,7 +36,7 @@
         "mysql"
     ],
     "name": "ar-vr-bundle",
-    "version": "0.0.1",
+    "version": "0.0.4",
     "description": "ar-vr-bundle description",
     "type": "bundle"
 }
