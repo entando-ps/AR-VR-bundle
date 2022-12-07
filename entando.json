@@ -6,7 +6,20 @@
             "healthCheckPath": "/api/health"
         }
     ],
-    "microfrontends": [],
+    "microfrontends": [
+        {
+            "name": "iedx-app",
+            "customElement": "iedx-app",
+            "stack": "react",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "iedx-app",
+                "it": "iedx-app"
+            }
+        }
+    ],
     "svc": [
         "keycloak",
         "mysql"
