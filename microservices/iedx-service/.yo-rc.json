@@ -13,7 +13,7 @@
       }
     ],
     "applicationType": "microservice",
-    "baseName": "iedx",
+    "baseName": "arvr",
     "jhipsterVersion": "7.2.0",
     "skipClient": true,
     "withAdminUi": false,
@@ -26,7 +26,7 @@
     "dtoSuffix": "DTO",
     "testFrameworks": [],
     "pages": [],
-    "creationTimestamp": 1669904667603,
+    "creationTimestamp": 1670254180272,
     "serviceDiscoveryType": false,
     "reactive": false,
     "authenticationType": "oauth2",
@@ -35,7 +35,7 @@
     "cacheProvider": "caffeine",
     "enableHibernateCache": true,
     "databaseType": "sql",
-    "devDatabaseType": "h2Disk",
+    "devDatabaseType": "mysql",
     "prodDatabaseType": "mysql",
     "buildTool": "maven",
     "serverSideOptions": [],
@@ -44,13 +44,16 @@
     "messageBroker": false,
     "enableSwaggerCodegen": false,
     "microserviceDependencies": "entando",
-    "generateMicroFrontends": "never",
-    "enableTranslation": false,
+    "generateMicroFrontends": "always",
+    "enableTranslation": true,
     "nativeLanguage": "it",
     "monorepository": true,
     "skipCommitHook": true,
-    "jwtSecretKey": "NTliNTU4ZmMzOThiNjI0YjQ2MzFjOWVlYmIxMzI2NTY4OGZmMzkwM2VlODkyM2ZlYWJmNzE2YmRhNDMxNjRiZDQ4NDhjM2E4MDJjOGYxZTIyNmI2OGEyYWFiNTYyYzMyOTliYmIyNDMxNmU3YzhkZjdmNDNkYWYyZTRkNWYxNjE=",
+    "jwtSecretKey": "ODRhODllMzMxYmM2NGRhMzY5ZjUyNTgwNjk5YjgwYjQ3MDc4MzFjNTRkNjM3M2FkYmY5NmIxMTY5MjdlMTUyYjk0NjcwMGE1Yjg2YmFiMTIwMGEwZDZjZjlmYjQ4YjY2MmM1YzcxYWRiMjhiYjVjNjA5YzJkZTVhYTc5NzYyOWY=",
+    "languages": ["it"],
     "enableGradleEnterprise": false,
-    "languages": ["en", "fr"]
+    "lastLiquibaseTimestamp": 1670254489000,
+    "entities": ["Conference"],
+    "generateMfeForEntity": true
   }
 }

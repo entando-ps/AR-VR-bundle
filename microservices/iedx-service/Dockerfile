@@ -2,7 +2,7 @@ FROM openjdk:11
 
 WORKDIR /app
 
-COPY target/iedx-*-SNAPSHOT.jar /app/app.jar
+COPY target/arvr-*-SNAPSHOT.jar /app/app.jar
 
 CMD ["java", "-jar", "app.jar"]
 

@@ -1,0 +1,18 @@
+{
+    "microservices": [
+        {
+            "name": "iedx-service",
+            "stack": "spring-boot",
+            "healthCheckPath": "/api/health"
+        }
+    ],
+    "microfrontends": [],
+    "svc": [
+        "keycloak",
+        "mysql"
+    ],
+    "name": "ar-vr-bundle",
+    "version": "0.0.1",
+    "description": "ar-vr-bundle description",
+    "type": "bundle"
+}

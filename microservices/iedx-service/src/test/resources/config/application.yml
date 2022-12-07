@@ -18,10 +18,10 @@ spring:
     # Uncomment the following line to enable tests against production database type rather than H2, using Testcontainers
     #active: testcontainers
   application:
-    name: iedx
+    name: arvr
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:iedx;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:arvr;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     name:
     username:
     password:
@@ -57,13 +57,13 @@ spring:
     basename: i18n/messages
   task:
     execution:
-      thread-name-prefix: iedx-task-
+      thread-name-prefix: arvr-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: iedx-scheduling-
+      thread-name-prefix: arvr-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -88,7 +88,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'iedxApp'
+    name: 'arvrApp'
   logging:
     # To test json console appender
     use-json-format: false

@@ -75,7 +75,7 @@ management:
 
 spring:
   application:
-    name: iedx
+    name: arvr
   profiles:
     # The commented value for `active` can be replaced with valid Spring profiles to load.
     # Otherwise, it will be filled in by maven when building the JAR file
@@ -119,13 +119,13 @@ spring:
     allow-bean-definition-overriding: true
   task:
     execution:
-      thread-name-prefix: iedx-task-
+      thread-name-prefix: arvr-task-
       pool:
         core-size: 2
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: iedx-scheduling-
+      thread-name-prefix: arvr-scheduling-
       pool:
         size: 2
   thymeleaf:
@@ -138,7 +138,7 @@ spring:
       client:
         provider:
           oidc:
-            issuer-uri: http://localhost:9080/auth/realms/jhipster
+            issuer-uri: http://localhost:9080/auth/realms/entando-dev
         registration:
           oidc:
             client-id: internal
@@ -164,7 +164,7 @@ info:
 
 jhipster:
   clientApp:
-    name: 'iedxApp'
+    name: 'arvrApp'
   # By default CORS is disabled. Uncomment to enable.
   # cors:
   #   allowed-origins: "http://localhost:8100,http://localhost:9000"
@@ -174,12 +174,12 @@ jhipster:
   #   allow-credentials: true
   #   max-age: 1800
   mail:
-    from: iedx@localhost
+    from: arvr@localhost
   api-docs:
     default-include-pattern: ${server.servlet.context-path:}/api/.*
     management-include-pattern: ${server.servlet.context-path:}/management/.*
-    title: iedx API
-    description: iedx API documentation
+    title: arvr API
+    description: arvr API documentation
     version: 0.0.1
     terms-of-service-url:
     contact-name:

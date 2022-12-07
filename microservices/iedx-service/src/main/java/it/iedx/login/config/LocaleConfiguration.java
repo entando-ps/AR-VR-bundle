@@ -1,7 +1,9 @@
 package it.iedx.login.config;
 
+import it.iedx.login.web.rest.adapter.SimpleSecurityInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
@@ -17,10 +19,17 @@ public class LocaleConfiguration implements WebMvcConfigurer {
         return cookieLocaleResolver;
     }
 
+    @Bean
+    public HandlerInterceptor getTokenInterceptor(){
+        return new SimpleSecurityInterceptor();
+    }
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
         localeChangeInterceptor.setParamName("language");
         registry.addInterceptor(localeChangeInterceptor);
+        registry.addInterceptor(getTokenInterceptor())
+            .addPathPatterns("/api/**");
     }
 }

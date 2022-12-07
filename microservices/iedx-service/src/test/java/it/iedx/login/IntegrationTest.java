@@ -1,6 +1,6 @@
 package it.iedx.login;
 
-import it.iedx.login.IedxApp;
+import it.iedx.login.ArvrApp;
 import it.iedx.login.config.TestSecurityConfiguration;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -13,6 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@SpringBootTest(classes = { IedxApp.class, TestSecurityConfiguration.class })
+@SpringBootTest(classes = { ArvrApp.class, TestSecurityConfiguration.class })
 public @interface IntegrationTest {
 }

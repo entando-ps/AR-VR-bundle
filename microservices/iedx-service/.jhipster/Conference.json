@@ -1,0 +1,19 @@
+{
+  "microserviceName": "arvr",
+  "clientRootFolder": "arvr",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "service": "serviceImpl",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": true,
+  "readOnly": false,
+  "pagination": "infinite-scroll",
+  "name": "Conference",
+  "changelogDate": "20221205153449"
+}
