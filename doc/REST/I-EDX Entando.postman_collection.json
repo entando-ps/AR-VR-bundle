@@ -1,0 +1,2141 @@
+{
+	"info": {
+		"_postman_id": "4ae4b6c8-797b-4303-b54f-240079fc4fca",
+		"name": "I-EDX Entando",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lista esperienze",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/experiences?status=0",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experiences"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "0"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Restituisce la lista delle esperienze disponibili.\nOpzionalmente è possibile specificare in query string il parametro `status` per poter restringere la ricerca alle sole liste con lo stato desiderato.\nPer ciascuna esperienza viene restituito il nome e la relativa descrizione."
+			},
+			"response": [
+				{
+					"name": "GET lista esperienze",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscocde/api/experiences",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscocde",
+								"api",
+								"experiences"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 20 Dec 2021 08:43:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"UNO\",\n        \"id\": 1,\n        \"description\": \"descrizione esperienza UNO\"\n    },\n    {\n        \"name\": \"DUE\",\n        \"id\": 2,\n        \"description\": \"descrizione esperienza DUE\"\n    },\n    {\n        \"name\": \"TRE\",\n        \"id\": 3,\n        \"description\": \"descrizione esperienza TRE\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Asset esperienza",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/experience/1/describe",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experience",
+						"1",
+						"describe"
+					]
+				},
+				"description": "Restituisce i dettagli dell'esperienza compresa la descrizione di tutti gli scenari dichiarati nel relativo experience script.\nPer ciascun asset è anche presente un flag `presentOnDisk` che indica se il file sia presente su disco (`true`) o se sia ancora da caricare (`false`)."
+			},
+			"response": [
+				{
+					"name": "Asset esperienza",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "i-edx-token",
+								"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscode/api/experience/1/describe",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscode",
+								"api",
+								"experience",
+								"1",
+								"describe"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Feb 2022 10:29:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"YOUNG\",\n    \"description\": \"descrizione esperienza YOUNG\",\n    \"id\": 1,\n    \"assets\": [\n        {\n            \"id\": \"nice_city\",\n            \"type\": 1,\n            \"assetFilename\": \"nice_city.mp4\",\n            \"thumbnailFilename\": \"nice_city.png\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Nice City\"\n        },\n        {\n            \"id\": \"ayutthaya\",\n            \"type\": 1,\n            \"assetFilename\": \"ayutthaya.mp4\",\n            \"thumbnailFilename\": \"ayutthaya.png\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Ayutthaya\"\n        },\n        {\n            \"id\": \"doi_suthep\",\n            \"type\": 1,\n            \"assetFilename\": \"doi_suthep.mp4\",\n            \"thumbnailFilename\": \"doi_suthep.png\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Doi Suthep\"\n        },\n        {\n            \"id\": \"penguins\",\n            \"type\": 1,\n            \"assetFilename\": \"penguins.mp4\",\n            \"thumbnailFilename\": \"penguins.jpg\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Penguins\"\n        },\n        {\n            \"id\": \"hangar\",\n            \"type\": 0,\n            \"assetFilename\": \"hangar.jpg\",\n            \"thumbnailFilename\": \"hangar_thumb.jpg\",\n            \"assetPresentOnDisk\": true,\n            \"thumbnailPresentOnDisk\": true,\n            \"title\": \"Hangar\"\n        },\n        {\n            \"id\": \"witcher\",\n            \"type\": 0,\n            \"assetFilename\": \"witcher.jpg\",\n            \"thumbnailFilename\": \"witcher_thumb.jpg\",\n            \"assetPresentOnDisk\": true,\n            \"thumbnailPresentOnDisk\": true,\n            \"title\": \"The Witcher\"\n        },\n        {\n            \"id\": \"HotspotTest\",\n            \"type\": 2,\n            \"assetFilename\": \"ayutthaya.png\",\n            \"thumbnailFilename\": null,\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Go to Ayutthaya\"\n        }\n    ],\n    \"status\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Pubblica esperienza",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/experience/5/publish",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experience",
+						"5",
+						"publish"
+					]
+				},
+				"description": "Rendi disponibile un'esperienza per la fruizione da parte degli utenti"
+			},
+			"response": [
+				{
+					"name": "Pubblica esperienza",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscocde/api/experience/5/publish",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscocde",
+								"api",
+								"experience",
+								"5",
+								"publish"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Dec 2021 15:53:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "true"
+				}
+			]
+		},
+		{
+			"name": "Nascondi esperienza",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/experience/5/retire",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experience",
+						"5",
+						"retire"
+					]
+				},
+				"description": "RImuovi un'esperienza dal novero di quelle disponibili per la fruizione da parte degli utenti"
+			},
+			"response": [
+				{
+					"name": "Spubblica esperienza",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscocde/api/experience/5/retire",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscocde",
+								"api",
+								"experience",
+								"5",
+								"retire"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Dec 2021 15:54:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "true"
+				}
+			]
+		},
+		{
+			"name": "Dettaglio esperienza",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/experience/8",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experience",
+						"8"
+					]
+				},
+				"description": "Restituisce il record di una esperienza con l'esclusione dei metadati.\nNota: il campo `xml` e `thumbnail` contengono rispettivamente il _nome del file_ dell'experience script e del thumbnail così come salvati nel filesystem."
+			},
+			"response": [
+				{
+					"name": "Dettaglio esperienza",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscocde/api/experience/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscocde",
+								"api",
+								"experience",
+								"8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 22 Dec 2021 10:15:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 8,\n    \"name\": \"TRE\",\n    \"description\": \"descrizione esperienza TRE\",\n    \"path\": \"1640165968149\",\n    \"status\": 0,\n    \"profiles\": {\n        \"profiles\": [\n            {\n                \"gender\": \"FEMALE\",\n                \"age\": \"YOUNG\"\n            },\n            {\n                \"gender\": \"MALE\",\n                \"age\": \"ELDER\"\n            }\n        ]\n    },\n    \"upload\": \"2021-12-22T10:39:28+01:00\",\n    \"xml\": \"config.xml\",\n    \"thumbnail\": \"Entando_Logo_Dark_Blue@4x.png\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Modifica esperienza",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 8,\n    \"name\": \"TRE\",\n    \"description\": \"descrizione esperienza TRE\",\n    \"path\": \"1643202211796\",\n    \"status\": 0,\n    \"profiles\": {\n        \"profiles\": [\n            {\n                \"age\": \"YOUNG_ADULT\"\n            },\n            {\n                \"age\": \"ADULT\"\n            }\n        ]\n    },\n    \"upload\": \"2021-12-22T10:39:28+01:00\",\n    \"xml\": \"config.xml\",\n    \"thumbnail\": \"Entando_Logo_Dark_Blue@4x.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/experience",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experience"
+					]
+				},
+				"description": "Modifica il record di un'esperienza escludendo i metadati"
+			},
+			"response": [
+				{
+					"name": "Modifica esperienza",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 10,\n    \"name\": \"TRE\",\n    \"description\": \"descrizione esperienza TRE\",\n    \"path\": \"1643216507649\",\n    \"status\": 0,\n    \"profiles\":  {\n        \"profiles\": [\n            {\n                \"age\": \"YOUNG_ADULT\"\n            },\n            {\n                \"age\": \"ADULT\"\n            }\n        ]\n    },\n    \"upload\": \"2022-01-26T18:01:48+01:00\",\n    \"xml\": \"config.xml\",\n    \"thumbnail\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscode/api/experience",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscode",
+								"api",
+								"experience"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-accesscodeApp-alert",
+							"value": "A device is updated with identifier 10"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Jan 2022 09:10:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-accesscodeApp-params",
+							"value": "10"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 10,\n    \"name\": \"TRE\",\n    \"description\": \"descrizione esperienza TRE\",\n    \"path\": \"1643216507649\",\n    \"status\": 0,\n    \"profiles\": {\n        \"profiles\": [\n            {\n                \"age\": \"YOUNG_ADULT\"\n            },\n            {\n                \"age\": \"ADULT\"\n            }\n        ]\n    },\n    \"upload\": \"2022-01-26T17:01:48Z\",\n    \"xml\": \"config.xml\",\n    \"thumbnail\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Cancellazione  esperienza",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/experience/7",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experience",
+						"7"
+					]
+				},
+				"description": "Cancella una intera esperienza, compresi i file allegati, dato il suo ID univoco"
+			},
+			"response": [
+				{
+					"name": "DELETE esperienza",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscocde/api/experience/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscocde",
+								"api",
+								"experience",
+								"4"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 20 Dec 2021 08:47:40 GMT"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-accesscocdeApp-params",
+							"value": "4"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "X-accesscocdeApp-alert",
+							"value": "A experience is deleted with identifier 4"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Lista dispositivi",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/devices",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"devices"
+					]
+				},
+				"description": "Restituisce la lista dei device presenti sul sistema.\nNOTA: essendo la lista generalmente contenuta vengono restituiti tutti i dettagli dei singoli device."
+			},
+			"response": [
+				{
+					"name": "Lista dispositivi",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscocde/api/devices",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscocde",
+								"api",
+								"devices"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Dec 2021 15:48:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"deviceId\": \"DEVUNO\",\n        \"status\": 0,\n        \"note\": \"postazione 1\",\n        \"name\": \"vr1\",\n        \"updated\": null,\n        \"added\": \"2021-11-10T17:17:46+01:00\"\n    },\n    {\n        \"id\": 2,\n        \"deviceId\": \"DEVDUE\",\n        \"status\": 0,\n        \"note\": \"postazione 2\",\n        \"name\": \"vr2\",\n        \"updated\": null,\n        \"added\": \"2021-11-10T17:17:46+01:00\"\n    },\n    {\n        \"id\": 15,\n        \"deviceId\": \"DEVTRE\",\n        \"status\": 0,\n        \"note\": \"postazione 3\",\n        \"name\": \"vr3\",\n        \"updated\": \"2021-12-14T17:13:41+01:00\",\n        \"added\": \"2021-12-14T16:37:14+01:00\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Creazione dispositivo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"deviceId\": \"DEVTRE\",\n  \"name\": \"vr3\",\n  \"note\": \"Potazione 3\",\n  \"status\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/device",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"device"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Creazione dispositivo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"deviceId\": \"DEVTRE\",\n  \"name\": \"vr3\",\n  \"note\": \"Potazione 3\",\n  \"status\": \"0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscocde/api/device",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscocde",
+								"api",
+								"device"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jan 2022 10:57:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"deviceId\": \"DEVTRE\",\n    \"status\": 0,\n    \"note\": \"Potazione 3\",\n    \"name\": \"vr3\",\n    \"updated\": null,\n    \"added\": \"2022-01-05T11:57:12.933+01:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Detteglio dispositivo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/device/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"device",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Carica i dettagli del singolo dispositivo."
+			},
+			"response": [
+				{
+					"name": "Detteglio dispositivo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscocde/api/device/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscocde",
+								"api",
+								"device",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Dec 2021 15:49:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"deviceId\": \"DEVUNO\",\n    \"status\": 0,\n    \"note\": \"postazione 1\",\n    \"name\": \"vr1\",\n    \"updated\": null,\n    \"added\": \"2021-11-10T17:17:46+01:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Modifica dispositivo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"deviceId\": \"DEVUNO\",\n    \"status\": 0,\n    \"note\": \"postazione 1\",\n    \"name\": \"vr1\",\n    \"updated\": null,\n    \"added\": \"2021-11-10T17:17:46+01:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/device",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"device"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Modifica Device",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"deviceId\": \"DEVUNO\",\n    \"status\": 0,\n    \"note\": \"postazione 1\",\n    \"name\": \"vr1\",\n    \"updated\": null,\n    \"added\": \"2021-11-10T17:17:46+01:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{\n    \"id\": 1,\n    \"deviceId\": \"DEVUNO\",\n    \"status\": 0,\n    \"note\": \"postazione 1\",\n    \"name\": \"vr1\",\n    \"updated\": \"2022-01-05T11:12:28.152+01:00\",\n    \"added\": \"2021-11-10T16:17:46Z\"\n}",
+							"host": [
+								"{\n    \"id\": 1,\n    \"deviceId\": \"DEVUNO\",\n    \"status\": 0,\n    \"note\": \"postazione 1\",\n    \"name\": \"vr1\",\n    \"updated\": \"2022-01-05T11:12:28",
+								"152+01:00\",\n    \"added\": \"2021-11-10T16:17"
+							],
+							"port": "46Z\"\n}"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jan 2022 10:12:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-accesscocdeApp-params",
+							"value": "1"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-accesscocdeApp-alert",
+							"value": "A device is updated with identifier 1"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"deviceId\": \"DEVUNO\",\n    \"status\": 0,\n    \"note\": \"postazione 1\",\n    \"name\": \"vr1\",\n    \"updated\": \"2022-01-05T11:12:28.152+01:00\",\n    \"added\": \"2021-11-10T16:17:46Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Cancellazione dispositivo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/device/5",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"device",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List POI",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/pois",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"pois"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List POI",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscode/api/poi/list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscode",
+								"api",
+								"poi",
+								"list"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 25 Jan 2022 09:57:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"name\": \"Questo è il palazzo Pazze\",\n        \"link\": \"https://dminnai.github.io/artest/test.html\",\n        \"src\": \"assets/asset.png\",\n        \"location\": {\n            \"lat\": 39.169192,\n            \"lng\": 8.526058\n        },\n        \"info\": \"INFO\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Creazione POI",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Questo è il palazzo Pazze",
+							"type": "text"
+						},
+						{
+							"key": "link",
+							"value": "https://dminnai.github.io/artest/test.html",
+							"type": "text"
+						},
+						{
+							"key": "src",
+							"value": "assets/asset.png",
+							"type": "text"
+						},
+						{
+							"key": "info",
+							"value": "informazioni",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/matteo/Desktop/IEDX/Authoring Demo Project/updated/Entando_Logo_Dark_Blue@4x.png"
+						},
+						{
+							"key": "lat",
+							"value": "39.169192",
+							"type": "text"
+						},
+						{
+							"key": "lng",
+							"value": "8.526058",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/poi",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"poi"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Creazione POI",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "i-edx-token",
+								"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Questo è il palazzo Pazze",
+									"type": "text"
+								},
+								{
+									"key": "link",
+									"value": "https://dminnai.github.io/artest/test.html",
+									"type": "text"
+								},
+								{
+									"key": "src",
+									"value": "assets/asset.png",
+									"type": "text"
+								},
+								{
+									"key": "info",
+									"value": "informazioni",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/matteo/Desktop/IEDX/Authoring Demo Project/updated/Entando_Logo_Dark_Blue@4x.png"
+								},
+								{
+									"key": "lat",
+									"value": "39.169192",
+									"type": "text"
+								},
+								{
+									"key": "lng",
+									"value": "8.526058",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/poi",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"poi"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Feb 2022 13:50:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Questo è il palazzo Pazze\",\n    \"link\": \"https://dminnai.github.io/artest/test.html\",\n    \"src\": \"Entando_Logo_Dark_Blue@4x.png\",\n    \"location\": {\n        \"lat\": 39.169192,\n        \"lng\": 8.526058\n    },\n    \"info\": \"informazioni\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Modifica POI",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Questo è POI modificato",
+							"type": "text"
+						},
+						{
+							"key": "link",
+							"value": "https://dminnai.github.io/artest/test.html",
+							"type": "text"
+						},
+						{
+							"key": "src",
+							"value": "assets/asset.png",
+							"type": "text"
+						},
+						{
+							"key": "info",
+							"value": "informazioni",
+							"type": "text"
+						},
+						{
+							"key": "lat",
+							"value": "39.169192",
+							"type": "text"
+						},
+						{
+							"key": "lng",
+							"value": "8.526058",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/matteo/Desktop/IEDX/Authoring Demo Project/updated/Entando_Logo_Dark_Blue@4x.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/poi/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"poi",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Modifica POI",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "i-edx-token",
+								"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Questo è POI modificato",
+									"type": "text"
+								},
+								{
+									"key": "link",
+									"value": "https://dminnai.github.io/artest/test.html",
+									"type": "text"
+								},
+								{
+									"key": "src",
+									"value": "assets/asset.png",
+									"type": "text"
+								},
+								{
+									"key": "info",
+									"value": "informazioni",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "39.169192",
+									"type": "text"
+								},
+								{
+									"key": "lng",
+									"value": "8.526058",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/matteo/Desktop/IEDX/Authoring Demo Project/updated/Entando_Logo_Dark_Blue@4x.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/poi/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"poi",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Feb 2022 14:00:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Questo è POI modificato\",\n    \"link\": \"https://dminnai.github.io/artest/test.html\",\n    \"src\": \"Entando_Logo_Dark_Blue@4x.png\",\n    \"location\": {\n        \"lat\": 39.169192,\n        \"lng\": 8.526058\n    },\n    \"info\": \"informazioni\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Immagine POI",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/poi/3/image",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"poi",
+						"3",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " Cancellazione POI",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/poi/4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"poi",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": " Cancellazione POI",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscode/api/poi/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscode",
+								"api",
+								"poi",
+								"4"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-accesscodeApp-alert",
+							"value": "A POI is deleted with identifier 4"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 25 Jan 2022 11:56:15 GMT"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-accesscodeApp-params",
+							"value": "4"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,1160 @@
+{
+	"info": {
+		"_postman_id": "4848b314-eef1-4a53-8aed-ef7218add9b6",
+		"name": "I-EDX Another Reality",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Creazione di una nuova esperienza",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "YOUNG",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "descrizione esperienza YOUNG",
+							"type": "text"
+						},
+						{
+							"key": "xmlFile",
+							"type": "file",
+							"src": "/home/matteo/Desktop/IEDX/Authoring Demo Project/config.xml"
+						},
+						{
+							"key": "thumbnailFile",
+							"type": "file",
+							"src": "/home/matteo/Desktop/IEDX/Authoring Demo Project/Entando_Logo_Dark_Blue@4x.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/experience",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experience"
+					]
+				},
+				"description": "Crea un nuova esperienza.\nI parametri `descrizione` e `thumbnail` sono opzionali. Il thumbnail, se presente, deve essere caricato durante la creazione perché non è possibile farlo in un secondo momento.\nI vari scenari (o Asset) che compongono l'esperienza possono essere caricati in momenti successi e in qualsiasi ordine."
+			},
+			"response": [
+				{
+					"name": "Creazione di una nuova esperienza",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "i-edx-token",
+								"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "YOUNG",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "descrizione esperienza YOUNG",
+									"type": "text"
+								},
+								{
+									"key": "xmlFile",
+									"type": "file",
+									"src": "/home/matteo/Desktop/IEDX/Authoring Demo Project/config.xml"
+								},
+								{
+									"key": "thumbnailFile",
+									"type": "file",
+									"src": "/home/matteo/Desktop/IEDX/Authoring Demo Project/updated/Entando_Logo_Dark_Blue@4x.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscode/api/experience",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscode",
+								"api",
+								"experience"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Feb 2022 10:39:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"YOUNG\",\n    \"description\": \"descrizione esperienza YOUNG\",\n    \"id\": 2,\n    \"assets\": [\n        {\n            \"id\": \"nice_city\",\n            \"type\": 1,\n            \"assetFilename\": \"nice_city.mp4\",\n            \"thumbnailFilename\": \"nice_city.png\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Nice City\"\n        },\n        {\n            \"id\": \"ayutthaya\",\n            \"type\": 1,\n            \"assetFilename\": \"ayutthaya.mp4\",\n            \"thumbnailFilename\": \"ayutthaya.png\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Ayutthaya\"\n        },\n        {\n            \"id\": \"doi_suthep\",\n            \"type\": 1,\n            \"assetFilename\": \"doi_suthep.mp4\",\n            \"thumbnailFilename\": \"doi_suthep.png\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Doi Suthep\"\n        },\n        {\n            \"id\": \"penguins\",\n            \"type\": 1,\n            \"assetFilename\": \"penguins.mp4\",\n            \"thumbnailFilename\": \"penguins.jpg\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Penguins\"\n        },\n        {\n            \"id\": \"hangar\",\n            \"type\": 0,\n            \"assetFilename\": \"hangar.jpg\",\n            \"thumbnailFilename\": \"hangar_thumb.jpg\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Hangar\"\n        },\n        {\n            \"id\": \"witcher\",\n            \"type\": 0,\n            \"assetFilename\": \"witcher.jpg\",\n            \"thumbnailFilename\": \"witcher_thumb.jpg\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"The Witcher\"\n        },\n        {\n            \"id\": \"HotspotTest\",\n            \"type\": 2,\n            \"assetFilename\": \"ayutthaya.png\",\n            \"thumbnailFilename\": null,\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Go to Ayutthaya\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Caricamento di un asset in una esperienza",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/matteo/Desktop/IEDX/Authoring Demo Project/Images360/hangar.jpg"
+						},
+						{
+							"key": "thumbnailFile",
+							"type": "file",
+							"src": "/home/matteo/Desktop/IEDX/Authoring Demo Project/Images360/hangar_thumb.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/experience/39/asset?isAsset=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experience",
+						"39",
+						"asset"
+					],
+					"query": [
+						{
+							"key": "isAsset",
+							"value": "true"
+						}
+					]
+				},
+				"description": "Questo enpoint permette il caricamento di uno scenario (o asset) `purchè questo sia stata preventivamente dichiarato nell'experience script dell'esperienza` che si intende modificare, in caso contrario si ottiene come risposta il codice 304 (non modificato).\nQuando il caricamento va a buon fine si ottiene il codice 204 (No content)"
+			},
+			"response": [
+				{
+					"name": "Caricamento di un asset in una esperienza",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "i-edx-token",
+								"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/matteo/Desktop/IEDX/Authoring Demo Project/Images360/witcher.jpg"
+								},
+								{
+									"key": "thumbnailFile",
+									"type": "file",
+									"src": "/home/matteo/Desktop/IEDX/Authoring Demo Project/Images360/witcher_thumb.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscode/api/experience/1/asset?isAsset=true",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscode",
+								"api",
+								"experience",
+								"1",
+								"asset"
+							],
+							"query": [
+								{
+									"key": "isAsset",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Feb 2022 10:13:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"assets\": [\n        {\n            \"id\": \"nice_city\",\n            \"type\": 1,\n            \"assetFilename\": \"nice_city.mp4\",\n            \"thumbnailFilename\": \"nice_city.png\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Nice City\"\n        },\n        {\n            \"id\": \"ayutthaya\",\n            \"type\": 1,\n            \"assetFilename\": \"ayutthaya.mp4\",\n            \"thumbnailFilename\": \"ayutthaya.png\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Ayutthaya\"\n        },\n        {\n            \"id\": \"doi_suthep\",\n            \"type\": 1,\n            \"assetFilename\": \"doi_suthep.mp4\",\n            \"thumbnailFilename\": \"doi_suthep.png\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Doi Suthep\"\n        },\n        {\n            \"id\": \"penguins\",\n            \"type\": 1,\n            \"assetFilename\": \"penguins.mp4\",\n            \"thumbnailFilename\": \"penguins.jpg\",\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Penguins\"\n        },\n        {\n            \"id\": \"hangar\",\n            \"type\": 0,\n            \"assetFilename\": \"hangar.jpg\",\n            \"thumbnailFilename\": \"hangar_thumb.jpg\",\n            \"assetPresentOnDisk\": true,\n            \"thumbnailPresentOnDisk\": true,\n            \"title\": \"Hangar\"\n        },\n        {\n            \"id\": \"witcher\",\n            \"type\": 0,\n            \"assetFilename\": \"witcher.jpg\",\n            \"thumbnailFilename\": \"witcher_thumb.jpg\",\n            \"assetPresentOnDisk\": true,\n            \"thumbnailPresentOnDisk\": true,\n            \"title\": \"The Witcher\"\n        },\n        {\n            \"id\": \"HotspotTest\",\n            \"type\": 2,\n            \"assetFilename\": \"ayutthaya.png\",\n            \"thumbnailFilename\": null,\n            \"assetPresentOnDisk\": false,\n            \"thumbnailPresentOnDisk\": false,\n            \"title\": \"Go to Ayutthaya\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Donwload asset",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/experience/5/asset/hangar?type=IMAGE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experience",
+						"5",
+						"asset",
+						"hangar"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "IMAGE"
+						}
+					]
+				},
+				"description": "Scarica un asset (o scenario), individuato tramite ID univoco, dell'esperienza desiderata. \nL'ID dell'asset è proprio quello dichiarato nell'experience script associato all'esperienza. \nQualora due elementi di tipo differente di scenario condividano lo stesso ID, si ricorre al parametro opzionale `type` per specificare il tipo desiderato."
+			},
+			"response": []
+		},
+		{
+			"name": "Download asset thumbnail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/experience/2/asset/thumbnail/hangar?type=IMAGE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experience",
+						"2",
+						"asset",
+						"thumbnail",
+						"hangar"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "IMAGE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Scarica experience script",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/experience/10/xml",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experience",
+						"10",
+						"xml"
+					]
+				},
+				"description": "Scarica l'experience script in formato XML proprio dell'esperienza"
+			},
+			"response": []
+		},
+		{
+			"name": "Scarica thumbnail esperienza",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/experience/5/thumbnail",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"experience",
+						"5",
+						"thumbnail"
+					]
+				},
+				"description": "Scarica il thumbnail associato all'esperienza"
+			},
+			"response": []
+		},
+		{
+			"name": "Polling / Oculus",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"type": "text",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"token\": \"DEVDUE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "Questa invocazione viene fatta passando come parametro `l'identificativo univoco del visore` allo scopo di verificare la presenza di un utente in coda per l'utilizzo.\nIn caso affermativo viene restituita la lista delle esperienze disponibili per la fruzione.\nNOTA: questa chiamata può essere effettuata solo una volta in quanto l'access code associato all'utente viene immediatamente invalidato."
+			},
+			"response": [
+				{
+					"name": "Polling / ingaggio utente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\": \"DEVDUE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/services/accesscocde/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"services",
+								"accesscocde",
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jan 2022 09:21:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessCodeId\": 25,\n    \"experiences\": [\n        {\n            \"name\": \"DUE\",\n            \"id\": 9,\n            \"description\": \"descrizione esperienza DUE\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Polling / player esterno",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"token\": \"HEWO\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/ext/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"ext",
+						"login"
+					]
+				},
+				"description": "Questa invocazione viene fatta passando come parametro `l'access code` per poter riprodurre l'esperienza in un device diverso dall'Oculus (es. dispositivo mobile).\nIn caso affermativo viene restituita la lista (eventualmente vuota) delle esperienze disponibili per la fruzione.\nNOTA: questa chiamata può essere effettuata solo una volta in quanto l'access code associato all'utente viene immediatamente invalidato."
+			},
+			"response": [
+				{
+					"name": "Polling / player esterno",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "i-edx-token",
+								"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\": \"HEWO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/ext/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"ext",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Feb 2022 11:46:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessCodeId\": 5,\n    \"experiences\": [\n        {\n            \"name\": \"YOUNG\",\n            \"id\": 2,\n            \"description\": \"descrizione esperienza YOUNG\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Aggiorna stato accesscode",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/accesscode/5",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"accesscode",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Aggiorna stato accesscode",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "i-edx-token",
+								"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accesscode/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accesscode",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 10:09:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"status\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Creazione Evento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accessCodeId\": 22,\n    \"choiceId\": \"choice-2-id\",\n    \"eventName\": \"menu 1 scelta 2\",\n    \"experienceId\": 7,\n    \"scenarioElementId\": \"menu-1-id\",\n    \"type\": \"DETAILSPANEL_EXPAND\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/event",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"event"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Creazione Evento",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "i-edx-token",
+								"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accessCodeId\": 1,\n    \"choiceId\": \"choice-2-id\",\n    \"eventName\": \"menu 1 scelta 2\",\n    \"experienceId\": 1,\n    \"scenarioElementId\": \"menu-1-id\",\n    \"type\": \"MENU_CHOICE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/event",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"event"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Feb 2022 11:20:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"experienceId\": 1,\n    \"accessCodeId\": 1,\n    \"date\": \"2022-02-21T12:20:13.52+01:00\",\n    \"eventName\": \"menu 1 scelta 2\",\n    \"type\": \"MENU_CHOICE\",\n    \"scenarioElementId\": \"menu-1-id\",\n    \"choiceId\": \"choice-2-id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Keep alive",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "i-edx-token",
+						"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/ping/3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"ping",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Keep alive",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "i-edx-token",
+								"value": "554c8ffbe6a574c33680fb594ab8c0952b54d9301fc941a34ba27434cfd8cbca",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/ping/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"ping",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self' http://localhost:9080; frame-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 21 Feb 2022 16:15:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Feature-Policy",
+							"value": "geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; fullscreen 'self'; payment 'none'"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"status\": 3\n}"
+				}
+			]
+		}
+	]
+}
