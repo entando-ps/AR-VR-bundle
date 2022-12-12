@@ -1,0 +1,29 @@
+{
+  "common": {
+    "dataSaved": "",
+    "notAuthenticated": "",
+    "dataDeleted": "",
+    "yes": "",
+    "no": "",
+    "delete": "",
+    "cancel": "",
+    "save": ""
+  },
+  "error": {
+    "dataLoading": ""
+  },
+  "entities": {
+    "accesscode": {
+      "notFound": "",
+      "deleted": "",
+      "age": "",
+      "gender": "",
+      "race": "",
+      "sentiment": "",
+      "deleteDialog": {
+        "title": "",
+        "description": ""
+      }
+    }
+  }
+}

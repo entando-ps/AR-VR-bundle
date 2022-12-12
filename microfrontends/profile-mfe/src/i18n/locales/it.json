@@ -1,0 +1,37 @@
+{
+  "error": {
+    "dataLoading": "Errore durante la connessione al server"
+  },
+  "common": {
+    "save": "Salva",
+    "dataSaved": "Accesscode salvato/a con successo",
+    "dataDeleted": "Accesscode eliminato/a con successo",
+    "notAuthenticated": "L'utente non è autenticato.",
+    "selectFile": "Carica nuovo file",
+    "selectImageFile": "Carica nuova immagine",
+    "download": "Scarica",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "yes": "Si",
+    "no": "No"
+  },
+  "validation": {
+    "required": "{{field}} è obbligatorio"
+  },
+  "entities": {
+    "accesscode": {
+      "deleteDialog": {
+        "title": "Elimina accesscode",
+        "description": "Sei sicuro/a?"
+      },
+      "notFound": "Accesscode non trovato/a",
+      "deleted": "Accesscode eliminato/a",
+      "id": "ID",
+      "id": "entità.accesscode.id",
+      "age": "entità.accesscode.age",
+      "gender": "entità.accesscode.gender",
+      "race": "entità.accesscode.race",
+      "sentiment": "entità.accesscode.sentiment"
+    }
+  }
+}

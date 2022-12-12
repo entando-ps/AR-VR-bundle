@@ -1,8 +1,11 @@
 package it.iedx.login.domain;
 
+import com.sun.source.doctree.SerialDataTree;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class MultiProfile {
+public class MultiProfile implements Serializable {
 
     List<Profile> profiles;
 

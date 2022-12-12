@@ -144,6 +144,12 @@ spring:
             client-id: internal
             client-secret: internal
             scope: openid,profile,email
+  # IEDX-15
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 500MB
+      max-request-size: 90MB
 
 server:
   servlet:

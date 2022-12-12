@@ -1,0 +1,9 @@
+{
+  "systemParams": {
+    "api": {
+      "accesscode-api": {
+        "url": "http://localhost:8081"
+      }
+    }
+  }
+}
