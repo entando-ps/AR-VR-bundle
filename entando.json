@@ -52,7 +52,7 @@
   ],
   "svc": ["mysql", "keycloak"],
   "name": "ar-vr-bundle",
-  "version": "0.0.4",
-  "description": "ar-vr-bundle description",
+  "version": "0.0.6",
+  "description": "Bundle for augmented and virtual reality",
   "type": "bundle"
 }
