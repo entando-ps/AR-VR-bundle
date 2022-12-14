@@ -1,0 +1,72 @@
+code: kc
+guiCode: |-
+  <#assign wp=JspTaglibs["/aps-core"]>
+  <script nonce="<@wp.cspNonce />" src="<@wp.info key="systemParam" paramName="applicationBaseURL" />keycloak.json"></script>
+  <script nonce="<@wp.cspNonce />" >
+    const beginKCLoad = (function() {
+      function createKcDispatcher(payload) {
+        return () => window.dispatchEvent(new CustomEvent('keycloak', { detail: payload }));
+      }
+
+      function initKeycloak() {
+        const keycloak = Keycloak('/entando-de-app/keycloak.json');
+
+        keycloak.onReady = () => {
+          console.debug('dispatching onReady()');
+          createKcDispatcher({ eventType: 'onReady' })();
+        };
+        keycloak.onAuthSuccess = () => {
+          console.debug('dispatching onAuthSuccess()', keycloak.token);
+          createKcDispatcher({ eventType: 'onAuthSuccess' });
+          localStorage.setItem('token', keycloak.token);
+        };
+        keycloak.onAuthError = () => {
+          console.debug('dispatching onAuthError()');
+          createKcDispatcher({ eventType: 'onAuthError' });
+        };
+        keycloak.onAuthRefreshSuccess = () => {
+          console.debug('dispatching onAuthRefreshSuccess()');
+          createKcDispatcher({ eventType: 'onAuthRefreshSuccess' });
+          localStorage.setItem('token', keycloak.token);
+        };
+        keycloak.onAuthRefreshError = () => {
+          console.debug('dispatching onAuthRefreshError()');
+          createKcDispatcher({ eventType: 'onAuthRefreshError' });
+        };
+        keycloak.onAuthLogout = () => {
+          console.debug('dispatching onAuthLogout()');
+          createKcDispatcher({ eventType: 'onAuthLogout' });
+        };
+        keycloak.onTokenExpired = () => {
+          console.debug('dispatching onTokenExpired()');
+          createKcDispatcher({ eventType: 'onTokenExpired' });
+          //keycloak.login({ redirectUri: location.protocol+'//'+location.host+'/entando-de-app/?redirectUri='+location.pathname });
+        };
+        const onInit = (isAuth) => {
+          console.debug('dispatching onInit()');
+          createKcDispatcher({ eventType: 'onInit' })();
+          if (isAuth) {
+            localStorage.setItem('token', keycloak.token);
+          }// else {
+           // keycloak.login({ redirectUri: location.protocol+'//'+location.host+'/entando-de-app/?redirectUri='+location.pathname });
+          //}
+        };
+
+        window.entando = {
+          ...(window.entando || {}),
+          keycloak,
+        };
+
+        window.entando.keycloak
+          .init({
+            onLoad: 'check-sso',
+            silentCheckSsoRedirectUri: '<@wp.info key="systemParam" paramName="applicationBaseURL" />cmsresources/arvr/silent-check-sso.html',
+            enableLogging: true,
+          })
+          .then(onInit)
+          .catch(e => console.error('Failed to initialize Keycloak', e));
+      }
+      return initKeycloak;
+    })();
+   beginKCLoad();
+  </script>

@@ -1,58 +1,58 @@
 {
-  "microservices": [
-    {
-      "name": "iedx-service",
-      "stack": "spring-boot",
-      "healthCheckPath": "/management/health",
-      "dbms": "mysql",
-      "ingressPath": "/vr",
-      "deploymentBaseName": "ar-vr",
-      "roles": ["ar-vr-admin", "ar-vr-view"]
-    }
-  ],
-  "microfrontends": [
-    {
-      "name": "iedx-app",
-      "customElement": "iedx-app",
-      "stack": "react",
-      "type": "widget",
-      "group": "free",
-      "publicFolder": "public",
-      "titles": {
-        "en": "iedx-app",
-        "it": "iedx-app"
-      },
-      "apiClaims": [
+    "microservices": [
         {
-          "name": "iedx-api",
-          "type": "internal",
-          "serviceName": "iedx-service"
+            "name": "iedx-service",
+            "stack": "spring-boot",
+            "healthCheckPath": "/management/health",
+            "dbms": "mysql",
+            "ingressPath": "/vr",
+            "deploymentBaseName": "ar-vr",
+            "roles": ["ar-vr-admin", "ar-vr-view"]
         }
-      ]
-    },
-    {
-      "name": "profile-mfe",
-      "customElement": "profile-mfe",
-      "stack": "react",
-      "type": "widget",
-      "group": "free",
-      "publicFolder": "public",
-      "titles": {
-        "en": "profile-mfe",
-        "it": "profile-mfe"
-      },
-      "apiClaims": [
+    ],
+    "microfrontends": [
         {
-          "name": "iedx-api",
-          "type": "internal",
-          "serviceName": "iedx-service"
+            "name": "iedx-app",
+            "customElement": "iedx-app",
+            "stack": "react",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "iedx-app",
+                "it": "iedx-app"
+            },
+            "apiClaims": [
+                {
+                    "name": "iedx-api",
+                    "type": "internal",
+                    "serviceName": "iedx-service"
+                }
+            ]
+        },
+        {
+            "name": "profile-mfe",
+            "customElement": "profile-mfe",
+            "stack": "react",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "profile-mfe",
+                "it": "profile-mfe"
+            },
+            "apiClaims": [
+                {
+                    "name": "iedx-api",
+                    "type": "internal",
+                    "serviceName": "iedx-service"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "svc": ["mysql", "keycloak"],
-  "name": "ar-vr-bundle",
-  "version": "0.0.6",
-  "description": "Bundle for augmented and virtual reality",
-  "type": "bundle"
+    ],
+    "svc": ["mysql", "keycloak"],
+    "name": "ar-vr-bundle",
+    "version": "0.0.6",
+    "description": "Bundle for augmented and virtual reality",
+    "type": "bundle"
 }

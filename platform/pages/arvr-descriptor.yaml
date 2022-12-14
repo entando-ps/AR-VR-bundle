@@ -1,0 +1,16 @@
+code: arvr
+parentCode: homepage
+titles:
+  en: AR-VR Augmented Reality
+  it: AR-VR Augmented Reality
+pageModel: arvr_ar
+ownerGroup: free
+joinGroups: []
+displayedInMenu: true
+seo: false
+charset: utf-8
+status: published
+widgets:
+  - code: ar_arvr
+    config: null
+    pos: 3

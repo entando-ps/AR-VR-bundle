@@ -1,0 +1,232 @@
+body {
+	color: #000;
+	background: #E5E5E5 !important;
+}
+
+.arvr-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+nav .arvr-body a {
+	color: #2d9cdb;
+	font-weight: 100;
+}
+
+.arvr-body a {
+	font-weight: 600;
+}
+
+.arvr-body {}
+
+.arvr-login-box {
+	width: 28vw;
+	height: 421px;
+	background: #FFFFFF;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
+}
+
+.arvr-login-header {
+	background: #FFFFFF;
+	border-radius: 238px;
+	margin: 0px 0 40px;
+}
+
+.arvr-input {
+	background: #FFFFFF;
+	border: 1px solid #CED4DA;
+	box-sizing: border-box;
+	border-radius: 4px;
+	width: 420px;
+	height: 38px;
+	text-indent: 10px;
+}
+
+.arvr-submit-button {
+	color: #fff;
+	background: #2D9CDB;
+	border: none;
+	padding: 10px 16px;
+	border-radius: 6px;
+	margin: 10px 0;
+}
+
+.form-group.arvr-groups {
+	margin-bottom: 20px;
+}
+
+input::-webkit-input-placeholder {
+	color: #ABB5BE;
+}
+
+input:-moz-placeholder {
+	color: #ABB5BE;
+}
+
+input::-moz-placeholder {
+	color: #ABB5BE;
+}
+
+input:-ms-input-placeholder {
+	color: #ABB5BE;
+}
+
+.arvr-logo {
+	height: 61px;
+	margin-left: 32px;
+}
+
+.navbar-brand {}
+
+.navbar {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+	position: relative;
+	/* margin: 0 32px;
+     */
+	background: white;
+}
+
+.arvr-LayoutWrapper nav {
+	position: absolute;
+	top: 70px;
+	left: 32px;
+}
+
+.arvr-login {
+	margin-right: 3rem;
+}
+
+login-button-widget div {
+	margin: 0;
+}
+
+.LoginButtonWidget__loginsvg {
+	color: #302d2d !important;
+	background: white !important;
+}
+
+.arvr-single-card-deck .arvr-card-img {
+	height: 27px;
+	width: 27px;
+	color: #fff;
+}
+
+.arvr-single-card-deck {
+	width: 50%;
+	height: 100px;
+	position: absolute;
+	top: 170px;
+	/*! bottom: 0;
+     */
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.arvr-login-alert {
+	text-align: center;
+	margin: 30px auto
+}
+
+.arvr-single-card-deck .alert {
+	font-size: 20px;
+	text-align: center;
+}
+
+.btn-outline-dark {
+	color: #636464;
+	border-color: #636464;
+}
+
+.btn-outline-dark:hover {
+	color: #212529;
+	border-color: #212529;
+	background-color: #fff;
+}
+
+.btn-arvr-navbar {
+	background-color: #fff;
+	border-color: #fff;
+	color: #191717;
+	text-transform: capitalize;
+}
+
+.arvr-app-logo {
+	text-align: center;
+	margin: 20px 0 30px;
+}
+
+.arvr-card-login {
+	margin: 0 5px;
+}
+
+.arvr-logout-img {
+	width: 18px;
+	height: 18px;
+	margin: 0 7px;
+}
+
+.arvr-login .dropdown-item {
+	display: flex;
+	align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+	.arvr-logo {
+		height: 24px;
+		margin-left: 13px;
+	}
+	.navbar {
+		margin: 0;
+	}
+	.arvr-LayoutWrapper {
+		position: relative;
+		background: transparent;
+		padding: 70px 0;
+	}
+}
+
+.arvr-footer {
+	position: relative;
+	background: white;
+	text-align: center;
+	padding: 20px;
+	margin-top: auto;
+	border-top: 1px solid #dee2e6;
+}
+
+.arvr-footer img {
+	height: 66px;
+	margin: 0 15px;
+}
+
+.arvr-footer p {
+	margin: 15px 0 0;
+	color: #6c757d;
+}
+
+td:nth-child(2) {
+	max-width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.navbar.arvr-ar {
+	width: 100%;
+	position: absolute;
+	top: 1px;
+	justify-content: left;
+}

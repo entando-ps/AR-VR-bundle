@@ -1,0 +1,74 @@
+code: arvr
+description: Template per AR-VR app
+configuration:
+  frames:
+    - pos: 0
+      description: Frame 1
+      mainFrame: false
+      sketch:
+        x1: 0
+        y1: 0
+        x2: 11
+        y2: 0
+    - pos: 1
+      description: Frame 2
+      mainFrame: false
+      sketch:
+        x1: 0
+        y1: 1
+        x2: 11
+        y2: 1
+    - pos: 2
+      description: MFE arvr
+      mainFrame: false
+      sketch:
+        x1: 0
+        y1: 2
+        x2: 11
+        y2: 2
+    - pos: 3
+      description: Frame 3
+      mainFrame: false
+      sketch:
+        x1: 0
+        y1: 3
+        x2: 11
+        y2: 3
+template: |-
+  <#assign wp=JspTaglibs["/aps-core"]>
+  <@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
+  <html lang="en">
+      <head>
+          <meta charset="utf-8"/>
+          <title>
+              <@wp.currentPage param="title" />
+          </title>
+          <meta name="viewport" content="width=device-width,  user-scalable=no"/>
+          <link rel="icon" href="<@wp.resourceURL />bundles/ar-vr-bundle-50166b70/resources/arvr/img/favicon.png" type="image/png"/>
+          <@wp.fragment code="header_inclusion" escapeXml=false />
+          <@wp.fragment code="keycloak_auth" escapeXml=false />
+      </head>
+      <body>
+        <div class="arvr-container">
+          <nav class="navbar">
+              <a class="navbar-brand" href="#">
+                  <img class="arvr-logo" src="<@wp.resourceURL />bundles/ar-vr-bundle-50166b70/resources/arvr/img/Frame.png">
+              </a>
+              <span class="arvr-login">
+                  <@wp.show frame=0 />
+              </span>
+          </nav>
+          <div class="arvr-body">
+              <#if (Session.currentUser.username != "guest") >
+              <@wp.show frame=2 />
+              <#else>          
+              <@wp.show frame=1 />            
+              </#if>
+              <@wp.show frame=3 />
+          </div>
+          <div class="arvr-footer">
+            <p>Entando 2022 - AR-VR </p>
+          </div>
+        </div>
+      </body>
+  </html>

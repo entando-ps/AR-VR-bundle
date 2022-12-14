@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+ body {
+     font-family: 'Roboto', sans-serif;
+}
+ span {
+     margin-right: 0.5em;}
+ div.debug {
+     position: fixed;
+     bottom: 20px;
+     left: 10px;
+     z-index: 1;
+     width: 100%;
+     background-color: rgba(1, 1, 1, 0.2);
+     color: #ff7500;
+     font-size: 0.75em;
+     padding: 0.5em;
+}
+ #place-label {
+     position: absolute;
+     display:flex;
+     top: 7%;
+     margin-left: auto;
+     margin-right: auto;
+     left: 0;
+     right: 0;
+     width: 94%;
+     flex-direction: column;
+     background: linear-gradient(180deg, #002F87 0%, rgba(11, 96, 255, 0.36) 100%);
+     border-radius: 20px;
+     height: auto;
+}
+ #place-label > span {
+     z-index: 0;
+     padding: 1em 1.25em .5em;
+     color: #ffffff;
+     text-align: center;
+     font-size: 1.5em;
+     font-weight: 600;
+     border-radius: 0px;
+}
+ #place-link {
+     color: #fff;
+     text-align: center;
+     font-size: 1.2em;
+     padding: .45em .75em;
+     background: #0b60ff;
+     font-weight: 600;
+}
+ a:visited {
+     color: #043959;
+}
+ .arjs-loader {
+     position: fixed;
+     z-index: 999;
+     overflow: show;
+     margin: auto;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     width: 50px;
+     height: 50px;
+     pointer-events: none;
+     border: 0.4em solid transparent;
+     border-color: #eee;
+     border-top-color: #444;
+     border-radius: 50%;
+     animation: loadingspin 1s linear infinite;
+}
+ @keyframes loadingspin {
+     100% {
+         transform: rotate(360deg) 
+    }
+}
+ .modal-content {
+     background-color: #fefefe;
+     margin: auto;
+     width: 92%;
+     height: 86vh;
+     background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 138.86%);
+     border-radius: 22px;
+}
+ .close {
+     color: #fff;
+     float: right;
+     font-size: 51px;
+     font-weight: bold;
+     position: absolute;
+     margin-left: auto;
+     margin-right: auto;
+     left: 0;
+     right: 0;
+     width:58px;
+     background: #0B60FF;
+}
+ .close:hover, .close:focus {
+     color: #000;
+     text-decoration: none;
+     cursor: pointer;
+}
+ #modal-btn {
+     margin:1rem 0;
+     width: 43%;
+     margin-left: auto;
+     margin-right: auto;
+     left: 0;
+     right: 0;
+     background: #0B60FF;
+     color:#fff;
+     font-size:1rem;
+     padding:.5rem;
+     border:none;
+     text-transform: capitalize;
+}
+ html.modal-active, body.modal-active {
+     overflow: hidden;
+}
+ #modal-container {
+     position: fixed;
+     display: table;
+     height: 100%;
+     width: 100%;
+     top: 0;
+     left: 0;
+     transform: scale(0);
+     z-index: 1;
+}
+ #modal-container.one {
+     transform: scaleY(0.01) scaleX(0);
+     animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+ #modal-container.one .modal-background .modal {
+     transform: scale(0);
+     animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+ #modal-container.one.out {
+     transform: scale(1);
+     animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+ #modal-container.one.out .modal-background .modal {
+     animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+ #modal-container .modal-background {
+     display: table-cell;
+     background: rgb(0 0 0 / 23%);
+     text-align: center;
+     vertical-align: middle;
+}
+ #modal-container .modal-background .modal h2 {
+     font-size: 25px;
+     line-height: 25px;
+     margin-bottom: 15px;
+}
+ #modal-container .modal-background .modal p {
+     font-size: 18px;
+     line-height: 22px;
+}
+ #modal-container .modal-background .modal .modal-svg {
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     border-radius: 3px;
+}
+ @keyframes unfoldIn {
+     0% {
+         transform: scaleY(0.005) scaleX(0);
+    }
+     50% {
+         transform: scaleY(0.005) scaleX(1);
+    }
+     100% {
+         transform: scaleY(1) scaleX(1);
+    }
+}
+ @keyframes unfoldOut {
+     0% {
+         transform: scaleY(1) scaleX(1);
+    }
+     50% {
+         transform: scaleY(0.005) scaleX(1);
+    }
+     100% {
+         transform: scaleY(0.005) scaleX(0);
+    }
+}
+ @keyframes zoomIn {
+     0% {
+         transform: scale(0);
+    }
+     100% {
+         transform: scale(1);
+    }
+}
+ @keyframes zoomOut {
+     0% {
+         transform: scale(1);
+    }
+     100% {
+         transform: scale(0);
+    }
+}
+ #modal-body {
+     color: #fff;
+     padding: 10px 0 30px;
+     width: 88%;
+     margin: 0 auto;
+     font-size: 18px;
+     line-height: 28px;
+     letter-spacing: -0.185185px;
+}
+ #modal-title {
+     font-size:24px;
+     color: #fff;
+     padding: 100px 0 30px;
+     font-weight:600;
+     line-height: 28px;
+}
+ #modal-link {
+     color: #fff;
+}
+ .navbar.arvr-ar {
+     width: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     justify-content: center;
+     text-align: center;
+     padding: 13px 0;
+     background: linear-gradient(180deg, #002F87 0%, rgba(11, 96, 255, 0.36) 100%);
+}
+ .navbar-brand .arvr-logo {
+     height: 20px;
+     width: auto;
+}
+ #place-link {
+     text-decoration: none;
+}
+ 

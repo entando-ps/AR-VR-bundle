@@ -1,0 +1,22 @@
+code: ar_vr
+parentCode: homepage
+titles:
+  en: AR-VR Homepage
+  it: AR-VR Homepage
+pageModel: arvr
+ownerGroup: free
+joinGroups: []
+displayedInMenu: true
+seo: false
+charset: utf8
+status: published
+widgets:
+  - code: legacy_kc_login
+    config: null
+    pos: 0
+  - code: not_logged
+    config: null
+    pos: 1
+  - code: iedx-app
+    config: null
+    pos: 2
