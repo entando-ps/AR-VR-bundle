@@ -2,3 +2,15 @@
   titles:
     en: ARVR
     it: ARVR
+- key: ADMINISTRATION
+  titles:
+    en: Administration
+    it: Amministrazione
+- key: SIGN_IN
+  titles:
+    en: Sign in
+    it: Entra
+- key: LOG_IN
+  titles:
+    en: Log in
+    it: Accedi
