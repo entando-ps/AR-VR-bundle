@@ -17,6 +17,6 @@ widgets:
   - code: not_logged
     config: null
     pos: 1
-  - code: arvr-app
+  - code: iedx-app-f96bbf04
     config: null
     pos: 2
