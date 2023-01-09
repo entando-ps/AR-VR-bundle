@@ -44,7 +44,7 @@ template: |-
               <@wp.currentPage param="title" />
           </title>
           <meta name="viewport" content="width=device-width,  user-scalable=no"/>
-          <link rel="icon" href="<@wp.resourceURL />bundles/ar-vr-bundle-f96bbf04/resources/arvr/img/favicon.png" type="image/png"/>
+          <link rel="icon" href="<@wp.resourceURL />bundles/ar-vr-bundle-16e7bbee/resources/arvr/img/favicon.png" type="image/png"/>
           <@wp.fragment code="header_inclusion" escapeXml=false />
           <@wp.fragment code="keycloak_auth" escapeXml=false />
       </head>
@@ -52,7 +52,7 @@ template: |-
         <div class="arvr-container">
           <nav class="navbar">
               <a class="navbar-brand" href="#">
-                  <img class="arvr-logo" src="<@wp.resourceURL />bundles/ar-vr-bundle-f96bbf04/resources/arvr/img/Frame.png">
+                  <img class="arvr-logo" src="<@wp.resourceURL />bundles/ar-vr-bundle-16e7bbee/resources/arvr/img/Frame.png">
               </a>
               <span class="arvr-login">
                   <@wp.show frame=0 />

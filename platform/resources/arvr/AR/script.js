@@ -10,7 +10,7 @@ window.onload = async() => {
             }
         };
 
-      const poiList = await fetch('https://teo.k8s-entando.org/ar-vr-bundle-f96bbf04/iedx-service/api/pois', options)
+      const poiList = await fetch('https://teo.k8s-entando.org/ar-vr-bundle-16e7bbee/iedx-service/api/pois', options)
           .then((response) => {
           return response.json();
         })
@@ -56,7 +56,7 @@ function renderPlaces(places) {
     places.forEach((place) => {
 
         const entPath = window.location.hostname;
-        const iconsrc = "/entando-de-app/cmsresources/bundles/ar-vr-bundle-f96bbf04/resources/arvr/AR/assets/assets.png";
+        const iconsrc = "/entando-de-app/cmsresources/bundles/ar-vr-bundle-16e7bbee/resources/arvr/AR/assets/assets.png";
         console.log( "entPath", entPath  );
         console.log( "iconsrc", iconsrc );
         const test = (entPath + iconsrc);
