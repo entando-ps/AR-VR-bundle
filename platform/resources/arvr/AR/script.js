@@ -1,6 +1,6 @@
 window.onload = async() => {
 
-     async function getPois() {
+    async function getPois() {
 
         const options = {
             method: 'get',
@@ -10,15 +10,15 @@ window.onload = async() => {
             }
         };
 
-      const poiList = await fetch('https://teo.k8s-entando.org/ar-vr-bundle-16e7bbee/iedx-service/api/pois', options)
-          .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-        let pois = data;
-        return pois;
-        })
-      return poiList
+        const poiList = await fetch( window.location.protocol +'//' + window.location.hostname + '/ar-vr-bundle-16e7bbee/iedx-service/api/pois', options)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let pois = data;
+                return pois;
+            })
+        return poiList
     }
 
 
